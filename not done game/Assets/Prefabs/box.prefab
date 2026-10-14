@@ -459,6 +459,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2384908179629770416, guid: f1ff141e9332ce84fa326f0cd0a83b85, type: 3}
+  pity: 5
+  powerupPity: {fileID: 2384908179629770416, guid: f1ff141e9332ce84fa326f0cd0a83b85, type: 3}
 --- !u!1 &8632862569085114933
 GameObject:
   m_ObjectHideFlags: 0
