@@ -5,13 +5,14 @@ using UnityEngine;
 public class Pity : MonoBehaviour
 {
     public GameObject[] randomizedSpawn;
-    bool touching;
+    public bool touching;
     public GameObject powerupPity;
+    public GameObject itemBox;
     public int pity;
     // Start is called before the first frame update
     void Start()
     {
-        touching = false;
+
     }
 
     // Update is called once per frame
@@ -20,17 +21,24 @@ public class Pity : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && touching == true)
         {
             pity += 1;
+            Destroy(itemBox, .01f);
             randomSpawn();
         }
+
         if (pity == 5)
         {
             pity = 0;
-            Invoke("pitySpawn", 1);
+            Invoke("pitySpawn", 0.0001f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
         touching = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        touching = false;
     }
     void randomSpawn()
     {
