@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         transform.position += Vector3.right * horizontal * moveSpeed * Time.deltaTime;
         transform.position += Vector3.up * vertical * moveSpeed * Time.deltaTime;
-        
 
-     //   if(Input.GetKey(KeyCode.W))
-     //   {
-     //       transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-        
+
+//        if (Input.GetKey(KeyCode.W))
+//        {
+//            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+//        }
     }
 }

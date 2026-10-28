@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8868190000893232053}
   - component: {fileID: 8188043712020984248}
   - component: {fileID: 6234953647559332864}
-  - component: {fileID: 1594384597871618901}
-  - component: {fileID: 5304698876370723426}
+  - component: {fileID: 5391167045348758656}
+  - component: {fileID: 338705702641706212}
+  - component: {fileID: 136496396185927703}
+  - component: {fileID: 6484533547982738360}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1712107857902062759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -101,7 +103,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!61 &1594384597871618901
+--- !u!114 &5391167045348758656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712107857902062759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd634b0567eff8c49ba7fe973c28dae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &338705702641706212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712107857902062759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c235b647d5c0f994f8bdf22f495a44bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomizedSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2384908179629770416, guid: f1ff141e9332ce84fa326f0cd0a83b85, type: 3}
+  touching: 0
+  powerupPity: {fileID: 2384908179629770416, guid: f1ff141e9332ce84fa326f0cd0a83b85, type: 3}
+  pity: 0
+  smth: {fileID: 0}
+--- !u!61 &136496396185927703
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +182,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &5304698876370723426
+--- !u!50 &6484533547982738360
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -172,7 +208,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &6046676586517066298
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +277,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
