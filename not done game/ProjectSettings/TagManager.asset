@@ -8,6 +8,7 @@ TagManager:
   - powerup
   - enemy
   - itembox
+  - passable wall
   layers:
   - Default
   - TransparentFX

@@ -5,24 +5,22 @@ using UnityEngine;
 public class Pity : MonoBehaviour
 {
     public GameObject[] randomizedSpawn;
-    public bool touching;
+    bool touching;
     public GameObject powerupPity;
     public int pity;
     public GameObject smth;
+    public GameObject passableWall;
+    bool wallCollision;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        wallCollision = passableWall.GetComponentInParent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (smth == gameObject.CompareTag("powerup"))
-        {
-
-        }
         if (Input.GetKeyDown(KeyCode.E) && touching == true && smth != null)
         {
             Destroy(smth);
@@ -35,6 +33,11 @@ public class Pity : MonoBehaviour
             pity = 0;
             pitySpawn();
         }
+        if (smth == gameObject.CompareTag("powerup")) 
+        {
+
+        }
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
