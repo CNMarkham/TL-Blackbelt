@@ -5,39 +5,43 @@ using UnityEngine;
 public class Pity : MonoBehaviour
 {
     public GameObject[] randomizedSpawn;
-    bool touching;
+    public bool touching;
     public GameObject powerupPity;
     public int pity;
     public GameObject smth;
     public GameObject passableWall;
-    bool wallCollision;
+    public GameObject powerupAura;
 
     // Start is called before the first frame update
     void Start()
     {
-        wallCollision = passableWall.GetComponentInParent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && touching == true && smth != null)
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            if (touching == true && smth.CompareTag("itembox"))
+            {
             Destroy(smth);
             pity += 1;
             randomSpawn();
+            }
+            if (touching == true && smth.CompareTag("powerup"))
+            {
+                Destroy (passableWall);
+                Destroy(smth);
+                pity = 0;
+                Instantiate(powerupAura, transform.position, transform.rotation);
+            }
         }
-
         if (pity == 5)
         {
             pity = 0;
             pitySpawn();
         }
-        if (smth == gameObject.CompareTag("powerup")) 
-        {
-
-        }
-
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -55,9 +59,11 @@ public class Pity : MonoBehaviour
         if (randomizedSpawn.Length == 0) return;
 
         int randomIndex = Random.Range(0, randomizedSpawn.Length);
-        GameObject powerup = randomizedSpawn[randomIndex];
-
-        Instantiate(powerup, transform.position, transform.rotation);
+        if(randomizedSpawn[randomIndex] != null)
+        {
+            GameObject powerup = randomizedSpawn[randomIndex];
+            Instantiate(powerup, transform.position, transform.rotation);
+        }
     }
     void pitySpawn()
     {
