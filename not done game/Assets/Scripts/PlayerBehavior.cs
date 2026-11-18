@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Pity : MonoBehaviour
+public class PlayerBehavior : MonoBehaviour
 {
     public GameObject[] randomizedSpawn;
     public bool touching;
     public GameObject powerupPity;
     public int pity;
     public GameObject smth;
-    public GameObject passableWall;
+    GameObject[] passableWall;
     public GameObject powerupAura;
-
+    public int NumberofBoxes;
     // Start is called before the first frame update
     void Start()
     {
-
+        passableWall = GameObject.FindGameObjectsWithTag("passable wall");
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,13 +31,20 @@ public class Pity : MonoBehaviour
             }
             if (touching == true && smth.CompareTag("powerup"))
             {
-                Destroy (passableWall);
+                for (int i = 0; i < passableWall.Length; i++)
+                {
+                    Destroy(passableWall[i]);
+                }
                 Destroy(smth);
                 pity = 0;
                 Instantiate(powerupAura, transform.position, transform.rotation);
             }
+            if (touching == true && smth.CompareTag("Exit"))
+            {
+                SceneManager.LoadScene(1);
+            }
         }
-        if (pity == 5)
+        if (pity == NumberofBoxes)
         {
             pity = 0;
             pitySpawn();
@@ -59,14 +66,17 @@ public class Pity : MonoBehaviour
         if (randomizedSpawn.Length == 0) return;
 
         int randomIndex = Random.Range(0, randomizedSpawn.Length);
+
         if(randomizedSpawn[randomIndex] != null)
         {
+            Vector3 OffsetZ = new Vector3(0, 0, -1);
             GameObject powerup = randomizedSpawn[randomIndex];
-            Instantiate(powerup, transform.position, transform.rotation);
+            Instantiate(powerup, transform.position + OffsetZ, transform.rotation);
         }
     }
     void pitySpawn()
     {
-        Instantiate(powerupPity, transform.position, transform.rotation);
+        Vector3 OffsetZ = new Vector3(0, 0, -1);
+        Instantiate(powerupPity, transform.position + OffsetZ, transform.rotation);
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - itembox
   - passable wall
+  - Exit
   layers:
   - Default
   - TransparentFX

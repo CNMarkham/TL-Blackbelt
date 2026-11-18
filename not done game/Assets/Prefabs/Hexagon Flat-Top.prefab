@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6203731117654396259}
   - component: {fileID: 7935107631950592642}
   - component: {fileID: 2974160884245251676}
-  - component: {fileID: 2178435280516416153}
   m_Layer: 0
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
@@ -48,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   Speed: 1
+  rotationSpeed: {x: 0, y: 0, z: 100}
 --- !u!212 &2974160884245251676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,16 +100,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2178435280516416153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117604722084623696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d9439fb22ea6e439818335eabd9a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: {x: 0, y: 0, z: 100}

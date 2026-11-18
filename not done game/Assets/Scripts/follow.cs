@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    public GameObject target;
+    GameObject target;
     public float Speed = 0.125f;
-
+    public Vector3 rotationSpeed = new Vector3(0, 0, 100);
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -15,8 +15,10 @@ public class Follow : MonoBehaviour
     {
         if (target != null)
         {
+            transform.Rotate(rotationSpeed * Time.deltaTime);
+            Vector3 OffsetZ = new Vector3(0, 0, 1);
             Vector3 PlayerPosition = target.transform.position;
-            Vector3 Position = Vector3.Lerp(transform.position, PlayerPosition, Speed);
+            Vector3 Position = Vector3.Lerp(transform.position, PlayerPosition + OffsetZ, Speed);
             transform.position = Position;
         }
     }
