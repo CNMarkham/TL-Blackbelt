@@ -13,10 +13,13 @@ public class PlayerBehavior : MonoBehaviour
     GameObject[] passableWall;
     public GameObject powerupAura;
     public int NumberofBoxes;
+    public GameObject weapon1;
+    int SceneNumber;
     // Start is called before the first frame update
     void Start()
     {
         passableWall = GameObject.FindGameObjectsWithTag("passable wall");
+        
     }
     // Update is called once per frame
     void Update()
@@ -39,9 +42,15 @@ public class PlayerBehavior : MonoBehaviour
                 pity = 0;
                 Instantiate(powerupAura, transform.position, transform.rotation);
             }
+            if (touching == true && smth.CompareTag("weapon itembox"))
+            {
+                Destroy(smth);
+
+            }
             if (touching == true && smth.CompareTag("Exit"))
             {
-                SceneManager.LoadScene(1);
+                SceneNumber = +1;
+                SceneManager.LoadScene(SceneNumber);
             }
         }
         if (pity == NumberofBoxes)

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0642c2acc2d3c43a2f15f41b734365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
 --- !u!61 &136496396185927703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +196,8 @@ MonoBehaviour:
   powerupPity: {fileID: 2384908179629770416, guid: f1ff141e9332ce84fa326f0cd0a83b85, type: 3}
   pity: 0
   smth: {fileID: 0}
+  powerupAura: {fileID: 2117604722084623696, guid: e6c18f77cb8fb8746a7638dc5feb64aa, type: 3}
+  NumberofBoxes: 0
 --- !u!1 &6046676586517066298
 GameObject:
   m_ObjectHideFlags: 0
