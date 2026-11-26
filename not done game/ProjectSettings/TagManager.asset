@@ -11,6 +11,7 @@ TagManager:
   - passable wall
   - Exit
   - weapon itembox
+  - weapon
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5653457975167497872}
   m_Layer: 0
   m_Name: gun
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 2675639638437729437}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.018, y: 0.089, z: 0}
+  m_LocalPosition: {x: 1.0609, y: 0.089, z: 0}
   m_LocalScale: {x: 0.25, y: 0.76874995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 5073667743821115878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.277, y: -0.088, z: 0}
+  m_LocalPosition: {x: 0.802, y: -0.088, z: 0}
   m_LocalScale: {x: 0.25, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 8287596613809335520}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.349, y: 0.075, z: 0}
+  m_LocalPosition: {x: 1.15, y: 0.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

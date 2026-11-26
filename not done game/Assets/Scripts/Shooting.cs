@@ -5,10 +5,9 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
 
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject bulletPrefab; 
-
-    [SerializeField] private float fireRate = 0.2f;
+    public Transform firePoint;
+    public GameObject bulletPrefab; 
+    public float fireRate = 0.2f;
 
     private Camera mainCam;
     private float nextFireTime;

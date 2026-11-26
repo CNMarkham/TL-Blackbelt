@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,13 +11,12 @@ public class PlayerBehavior : MonoBehaviour
     GameObject[] passableWall;
     public GameObject powerupAura;
     public int NumberofBoxes;
-    public GameObject weapon1;
     int SceneNumber;
+    public GameObject gun;
     // Start is called before the first frame update
     void Start()
     {
         passableWall = GameObject.FindGameObjectsWithTag("passable wall");
-        
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +42,7 @@ public class PlayerBehavior : MonoBehaviour
             if (touching == true && smth.CompareTag("weapon itembox"))
             {
                 Destroy(smth);
-
+                gun = null;
             }
             if (touching == true && smth.CompareTag("Exit"))
             {
